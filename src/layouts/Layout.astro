@@ -1,0 +1,48 @@
+---
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Estación Holidays - Restaurante de Cocina Continental en Maracaibo</title>
+    <meta name="description" content="Restaurante único en la zona norte de Maracaibo, Venezuela. Disfruta de una experiencia gastronómica que fusiona sabores continentales con cambios estacionales del menú." />
+    <meta name="keywords" content="restaurante maracaibo, zona norte, cocina internacional, estación holidays, restaurante venezuela, cocina continental, maracaibo zulia" />
+    <meta property="og:title" content="Estación Holidays - Restaurante de Cocina Continental en Maracaibo" />
+    <meta property="og:description" content="Restaurante único en la zona norte de Maracaibo. Fusión de sabores continentales con cambios estacionales del menú." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_VE" />
+    <meta name="google-site-verification" content="7OYSE-85tgZJ24WD3k_a2prVcv7hy61xKfTYrXT6Uy0" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --font-primary: 'Playfair Display', serif;
+    --font-secondary: 'Raleway', sans-serif;
+  }
+
+  html {
+    font-family: var(--font-secondary);
+    background-color: #fff;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-primary);
+  }
+</style>

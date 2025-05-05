@@ -1,0 +1,270 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <main>
+    <header class="hero">
+      <h1>Estación Holidays</h1>
+      <p class="tagline">
+        Un viaje culinario a través de continentes y estaciones
+      </p>
+    </header>
+
+    <section class="seasons">
+      <div class="season">
+        <h2>Estación Asia</h2>
+        <p>
+          Fusión de sabores asiáticos modernos con ingredientes de temporada
+        </p>
+      </div>
+
+      <div class="season">
+        <h2>Estación América</h2>
+        <p>
+          Sabores intensos desde el Norte hasta el Sur, celebrando la abundancia
+          del América y el Caribe
+        </p>
+      </div>
+
+      <div class="season">
+        <h2>Estación Europa</h2>
+        <p>
+          Festivales tradicionales de cosecha inspiran nuestra colección Europea
+        </p>
+      </div>
+    </section>
+
+    <section class="about">
+      <h2>Nuestra Historia</h2>
+      <p>
+        En Estación Holidays, ubicados en la exclusiva zona norte de Maracaibo,
+        creemos en la magia de la cocina estacional. Nuestros menús cambian con
+        las estaciones, llevándote en un viaje a través de los continentes
+        mientras respetamos los ingredientes locales y las tradiciones
+        culinarias.
+      </p>
+    </section>
+
+    <section class="location">
+      <h2>Ubicación</h2>
+      <p>Zona Norte · Av. Milagro Norte</p>
+      <p>Maracaibo, Estado Zulia</p>
+      <p>Venezuela</p>
+    </section>
+
+    <section class="contact">
+      <h2>Visítanos</h2>
+      <p>Horario de Atención</p>
+      <p>Lunes a Domingo</p>
+      <p>5:00 PM - 11:00 PM</p>
+      <button class="reserve-btn">Ver Ménu</button>
+      <br />
+      <button class="reserve-btn">Hacer una Reservación</button>
+    </section>
+  </main>
+
+  <footer class="signature-footer">
+    <p>Desarrollado por Enmanuel Baldonedo · 2025</p>
+  </footer>
+</Layout>
+
+<style>
+  main {
+    color: #000;
+    background-color: #fff;
+  }
+
+  .hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 4rem;
+    margin: 0;
+    letter-spacing: 0.2em;
+  }
+
+  .tagline {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    font-style: italic;
+  }
+
+  .seasons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 4rem 2rem;
+    background-color: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .season {
+    padding: 2.5rem;
+    border: 1px solid #00000015;
+    text-align: center;
+    transition: all 0.4s ease;
+    border-radius: 16px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+      'Lucida Sans', Arial, sans-serif;
+    background: #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .season::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #000, #333);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+  }
+
+  .season:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .season:hover::before {
+    transform: scaleX(1);
+  }
+
+  .season h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #000;
+    position: relative;
+    display: inline-block;
+  }
+
+  .season h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background-color: #000;
+    transition: width 0.3s ease;
+  }
+
+  .season:hover h2::after {
+    width: 80px;
+  }
+
+  .season p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+  }
+
+  .about,
+  .location {
+    background-color: #000;
+    color: #fff;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+
+  .about p,
+  .location p {
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .location {
+    background-color: #111;
+  }
+
+  .contact {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #fff;
+  }
+
+  .reserve-btn {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .reserve-btn:hover {
+    background-color: #333;
+  }
+
+  @media (max-width: 768px) {
+    .seasons {
+      grid-template-columns: 1fr;
+      padding: 2rem 1rem;
+    }
+
+    .season {
+      padding: 2rem;
+    }
+
+    .season h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+  .signature-footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+</style>
+
+<script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Estación Holidays",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Milagro Norte",
+      "addressLocality": "Maracaibo",
+      "addressRegion": "Zulia",
+      "postalCode": "4001",
+      "addressCountry": "VE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "X.XXXXXX",
+      "longitude": "X.XXXXXX"
+    },
+    "telephone": "+58XXXXXXXXX",
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "10:00",
+      "closes": "22:00"
+    }],
+    "servesCuisine": ["Comida Venezolana", "Parrilla", "Mariscos"],
+    "priceRange": "$$"
+  }
+</script>
