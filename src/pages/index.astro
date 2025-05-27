@@ -46,13 +46,6 @@ import Layout from '../layouts/Layout.astro';
       </p>
     </section>
 
-    <section class="location">
-      <h2>Ubicación</h2>
-      <p>Zona Norte · Av. Milagro Norte</p>
-      <p>Maracaibo, Estado Zulia</p>
-      <p>Venezuela</p>
-    </section>
-
     <section class="contact">
       <h2>Visítanos</h2>
       <p>Horario de Atención</p>
@@ -61,6 +54,14 @@ import Layout from '../layouts/Layout.astro';
       <button class="reserve-btn">Ver Ménu</button>
       <br />
       <button class="reserve-btn">Hacer una Reservación</button>
+    </section>
+
+    <section class="location">
+      <h2>Ubicación</h2>
+      <p>Centro Comercial Bahia del Lago</p>
+      <p>Avenida Milagro Norte.</p>
+      <p>Maracaibo 4002, Zulia</p>
+      <p>Venezuela</p>
     </section>
   </main>
 
@@ -190,7 +191,7 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .location {
-    background-color: #111;
+    background-color: #000;
   }
 
   .contact {
@@ -244,27 +245,40 @@ import Layout from '../layouts/Layout.astro';
     "@context": "https://schema.org",
     "@type": "Restaurant",
     "name": "Estación Holidays",
+    "alternateName": ["Estacion Holidays"],
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Av. Milagro Norte",
+      "streetAddress": "Centro Comercial Bahia del Lago, Av. Milagro Nte.",
       "addressLocality": "Maracaibo",
       "addressRegion": "Zulia",
-      "postalCode": "4001",
+      "postalCode": "4002",
       "addressCountry": "VE"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "X.XXXXXX",
-      "longitude": "X.XXXXXX"
+      "latitude": "10.72237",
+      "longitude": "-71.61830",
+      "address": "Centro Comercial Bahia del Lago, Av. Milagro Nte., Maracaibo 4002, Zulia, Venezuela",
+      "plusCode": "P9CJ+VQ Maracaibo, Zulia, Venezuela"
     },
-    "telephone": "+58XXXXXXXXX",
-    "openingHoursSpecification": [{
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-      "opens": "10:00",
-      "closes": "22:00"
-    }],
-    "servesCuisine": ["Comida Venezolana", "Parrilla", "Mariscos"],
+    "telephone": "+584141653859",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "10:00",
+        "closes": "22:00"
+      }
+    ],
+    "servesCuisine": ["Comida Venezolana", "Parrilla", "Mariscos", "Café"],
     "priceRange": "$$"
   }
 </script>
