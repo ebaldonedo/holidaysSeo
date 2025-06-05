@@ -1,8 +1,19 @@
 ---
+import ReactCart from '../components/ReactCart';
 import Layout from '../layouts/Layout.astro';
+const menuItems = [
+  { id: 1, name: 'Pizza Margarita', price: 10 },
+  { id: 2, name: 'Ensalada César', price: 8 },
+];
+
+const bebidas = [
+  { id: 1, name: 'Coca Cola', price: 2 },
+  { id: 2, name: 'Agua Mineral', price: 1.5 },
+];
 ---
 
 <Layout>
+  <ReactCart client:load menuItems={menuItems} bebidas={bebidas} />
   <main>
     <header class="hero">
       <h1>Estación Holidays</h1>
@@ -67,6 +78,17 @@ import Layout from '../layouts/Layout.astro';
           href="https://www.google.com/maps?q=Estaci%C3%B3n+Holidays,+centro+comercial+bahia+del+lago,+Av.+Milagro+Nte.,+Maracaibo+4002,+Zulia&ftid=0x8e899f730a344113:0x2e1f9d52b2fe67d4&hl=es-AE&gl=ae&entry=gps&lucs=,47071704&g_ep=CAISBjYuNzkuMxgAINeCAyoJLDQ3MDcxNzA0QgJWRQ%3D%3D&g_st=ic"
           >Dirección</a
         >
+
+        <!-- Redireccion a whatsapp con icono de ws http://wa.me/584128574900 -->
+        <!-- <a
+          class="reserve-btn whatsapp-btn"
+          style="text-decoration: none; display: flex; align-items: center; gap: 8px;"
+          href="https://wa.me/584141653859"
+          target="_blank"
+        >
+          <i class="fab fa-whatsapp"></i>
+          Contáctanos
+        </a> -->
       </div>
     </section>
 
@@ -78,6 +100,16 @@ import Layout from '../layouts/Layout.astro';
       <p>Venezuela</p>
     </section>
   </main>
+
+  <!-- <a
+    class="whatsapp-float"
+    href="https://wa.me/584128574900?text=Hola%20Estación%20Holidays%20listo%20para%20ordenar"
+    target="_blank"
+    href="/buscar"
+    aria-label="Buscar"
+  >
+    <i class="fab fa-whatsapp"></i>
+  </a> -->
 
   <footer class="signature-footer">
     <p>Desarrollado por Enmanuel Baldonedo · 2025</p>
@@ -252,6 +284,43 @@ import Layout from '../layouts/Layout.astro';
     font-size: 0.9rem;
     font-style: italic;
   }
+
+  .whatsapp-btn {
+    background-color: #25d366 !important;
+  }
+
+  .whatsapp-btn:hover {
+    background-color: #128c7e !important;
+  }
+
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+
+  .whatsapp-float:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);
+  }
+
+  .whatsapp-float i {
+    margin: 0;
+  }
 </style>
 
 <script type="application/ld+json" is:inline>
@@ -272,8 +341,7 @@ import Layout from '../layouts/Layout.astro';
       "@type": "GeoCoordinates",
       "latitude": "10.72237",
       "longitude": "-71.61830",
-      "address": "Centro Comercial Bahia del Lago, Av. Milagro Nte., Maracaibo 4002, Zulia, Venezuela",
-      "plusCode": "P9CJ+VQ Maracaibo, Zulia, Venezuela"
+      "address": "Centro Comercial Bahia del Lago, Av. Milagro Nte., Maracaibo 4002, Zulia, Venezuela"
     },
     "telephone": "+584141653859",
     "openingHoursSpecification": [
@@ -296,3 +364,12 @@ import Layout from '../layouts/Layout.astro';
     "priceRange": "$$"
   }
 </script>
+
+<!-- Add Font Awesome in the head section -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
